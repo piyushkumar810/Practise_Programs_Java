@@ -1,0 +1,61 @@
+--------------------------------------------------core java questions--------------------------------------------------
+
+q1) why java is not 100% object-oriented?
+ans -> because of primitive data types namely:-
+       boolean, byte, char, int, float, long, double, short.
+
+       to make them object-oriented we have wrapper class which actually wrap the primitive data type to object type.
+
+q2) why pointers are not allowed in java.
+ans ->a) they are unsafe.
+      b) since jvm is responsible for allocating and deallocating the memory , thus in order to avoid direct access
+         to the memory by the user, pointer are discouraged in java.
+
+q3) what is jit compiler in java ?
+ans ->
+
+q4) why is string immutable in java ?
+ans -> a) String pool requires string to be immutable otherwise shared reference can be changed form anywhere.
+       b) Security because string is shared in different area like file system, database connection, networking connection
+          , having immutable string allows you to be secure and safe because no one can change reference of string once
+           it is created.
+
+q5) what is marker interface ?
+ans -> a marker interface can be defined as the interface having no data member and member function.
+       in simpler term, an empty interface is called the marker interface
+       eg:- Serializable, Cloneable
+       public interface Cloneable{}
+
+q6) Can you override a private or static method in java ?
+ans -> a) you cannot override private or static member in java.
+       b) you cannot override a private method in sub-class because it's not accessible there, what you do is create another
+          private method with the same name in the child class.
+       c) for static method if you create a similar method with same return type and same method argument in child class then
+          it will hide the super class method , this is known as method hiding.
+
+q7) does "finally" always execute in java ?
+ans -> not in following cases.
+        i) "System.exit()" function
+        ii) system crash
+
+q8) what method does the object class have ?
+ans ->
+
+q9) how can you make your class immutable ?
+ans -> check on youtube
+
+q10) what is singleton class in java and how can we make a class singleton.
+ans -> Singleton class is a class whose only one instance can be created at any give time, in one jvm
+       eg:-
+         public class animal {
+          private static animal single_instance = null;
+          private animal()
+          {}
+          public static animal.getInstance()
+          {
+            if(single_instance == null)
+                single_instance = new animal();
+
+            return single_instance;
+          }
+         }
